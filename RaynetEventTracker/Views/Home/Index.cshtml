@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RAYNET Event Tracker</title>
+    <link rel="stylesheet" href="~/css/rayneteventtarcker.css" />
+    <script type="text/javascript" src="~/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="~/js/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="~/js/rayneteventtracker.js"></script>
+</head>
+<body>
+    <div id="mapcontainer">
+        <img id="map" data-bind="attr: { src: mapSource }" src="~/img/error.png" />
+        <div id="markercontainer" data-bind="foreach: markers">
+            <span class="marker" data-bind="style: { top: $parent.objectTop(Lat) + 'px', left: $parent.objectLeft(Long) + 'px' }"><img src="~/img/marker.png" /><span data-bind="text: $parent.displayName($data)"></span></span>
+        </div>
+    </div>
+</body>
+</html>
